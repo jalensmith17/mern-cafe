@@ -7,6 +7,7 @@ const Item = require('../models/item');
 (async function() {
 
   await Category.deleteMany({});
+  
   const categories = await Category.create([
     {name: 'Nintendo', sortOrder: 10},
     {name: 'Playstation', sortOrder: 20},
