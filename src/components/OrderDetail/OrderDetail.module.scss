@@ -4,7 +4,7 @@
     align-items: center;
     padding: 3vmin;
     font-size: 2vmin;
-    color: var(--text-light);
+    color: var(--text-dark);
   }
   
   .OrderDetail .sectionHeading {
@@ -23,7 +23,7 @@
     display: grid;
     grid-template-columns: 18.35vw 5.75vw 5.25vw;
     padding: 1vmin 0;
-    color: var(--text-light);
+    color: var(--text-dark);
     border-top: .1vmin solid var(--tan-3);
   }
   
@@ -40,7 +40,7 @@
     justify-content: flex-end;
   }
   
-  .OrderDetail .hungry {
+  .OrderDetail .setup {
     position: absolute;
     top: 50vh;
     font-size: 2vmin;
