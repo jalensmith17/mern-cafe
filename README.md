@@ -2,7 +2,9 @@
 <p>An ecommerce website with the most popular games, accessories, and gifts in stock!</p>
 
 <h2>Seed file with all of the categories and items</h2>
-```require('dotenv').config();
+```
+```
+require('dotenv').config();
 require('./database');
 
 const Category = require('../models/category');
@@ -95,4 +97,5 @@ const Item = require('../models/item');
   process.exit();
 
 })();
+```
 ```
