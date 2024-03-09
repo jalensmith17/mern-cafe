@@ -1,5 +1,5 @@
 .CategoryList {
-    color: var(--text-dark);
+    color: whitesmoke;
     list-style: none;
     padding: 0;
     font-size: 1.7vw;
@@ -20,7 +20,7 @@
     }
     
     .CategoryList li.active {
-    color: var(--text-dark);
+    color: var(--text-light);
     background-color: var(--tan-1);
     border: .1vmin solid var(--tan-3);
     }

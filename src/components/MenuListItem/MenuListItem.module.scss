@@ -7,8 +7,9 @@
     padding: 2vmin;
     color: var(--text-dark);
     background-color: var(--white);
-    border: .1vmin solid var(--tan-3);
-    border-radius: 1vmin;
+    border-top: .1vmin solid var(--tan-3);
+    border-bottom: .1vmin solid var(--tan-3);
+    border-color: black;
     font-size: 4vmin;
   }
   

@@ -1,3 +1,15 @@
+@keyframes logoFlash {
+    0% {
+        color: whitesmoke;
+    }
+    50% {
+        color: var(--red);
+    }
+    100% {
+        color: whitesmoke;
+    }
+}
+
 .Logo {
     height: 12vmin;
     width: 12vmin;
@@ -5,10 +17,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--text-dark);
+    color: whitesmoke;
     font-size: 3.7vmin;
+    animation: logoFlash 3s infinite;
     }
 
     .Logo :hover {
         color: var(--red);
     }
+

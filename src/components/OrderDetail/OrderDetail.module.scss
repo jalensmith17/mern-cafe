@@ -4,7 +4,7 @@
     align-items: center;
     padding: 3vmin;
     font-size: 2vmin;
-    color: var(--text-dark);
+    color: var(--text-light);
   }
   
   .OrderDetail .sectionHeading {
@@ -23,7 +23,7 @@
     display: grid;
     grid-template-columns: 18.35vw 5.75vw 5.25vw;
     padding: 1vmin 0;
-    color: var(--text-dark);
+    color: var(--text-light);
     border-top: .1vmin solid var(--tan-3);
   }
   
@@ -32,7 +32,7 @@
     justify-content: center;
     align-items: center;
     font-size: 1.5vw;
-    color: var(--text-dark);
+    color: var(--text-light);
   }
   
   .OrderDetail .total span.right {
@@ -43,5 +43,5 @@
   .OrderDetail .setup {
     position: absolute;
     top: 50vh;
-    font-size: 2vmin;
+    font-size: 5vmin;
   }
