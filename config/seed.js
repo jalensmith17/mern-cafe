@@ -63,13 +63,13 @@ const Item = require('../models/item');
     {name: 'Hollow Knight', image: 'https://upload.wikimedia.org/wikipedia/en/0/04/Hollow_Knight_first_cover_art.webp', category: categories[3], price: 9.95},
     {name: 'Alan Wake 2', image: 'https://upload.wikimedia.org/wikipedia/en/e/ed/Alan_Wake_2_box_art.jpg', category: categories[3], price: 49.95},
     {name: 'Armored Core 6: Fires of Rubicon', image: 'https://image.api.playstation.com/vulcan/ap/rnd/202304/2800/09d5b936da100fb0b96a2cdaa96a835e143b41b3e3ae0054.png', category: categories[3], price: 49.95},
-    {name: 'Cyberpunk 2077', image: 'https://static.wikia.nocookie.net/g-c-a/images/0/0b/Cover-art-6.jpg/revision/latest?cb=20210104020439', category: categories[3], price: 29.95},
+    {name: 'Cyberpunk 2077', image: 'https://howlongtobeat.com/games/Cyberpunk-2077-2.jpg', category: categories[3], price: 29.95},
     /*-- VR --*/
     {name: 'Meta Quest 3', image: 'https://www.techspot.com/images/products/2023/audio-video/org/2023-10-13-product-4.jpg', category: categories[4], price: 499.95},
     {name: 'Beat Saber', image: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/58/Beat_Saber_logo.jpg/220px-Beat_Saber_logo.jpg', category: categories[4], price: 29.95},
     {name: `Five Nights at Freddy's: Help Wanted`, image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/732690/capsule_616x353.jpg?t=1686587846', category: categories[4], price: 29.95},
     {name: `Half-Life: Alyx`, image: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Half-Life_Alyx_Cover_Art.jpg/220px-Half-Life_Alyx_Cover_Art.jpg', category: categories[4], price: 59.95},
-    {name: `Bonelab`, image: 'https://static.wikia.nocookie.net/boneworks/images/3/34/Bonelabposter.jpg/revision/latest?cb=20220420213219', category: categories[4], price: 39.95},
+    {name: `Bonelab`, image: 'https://m.media-amazon.com/images/M/MV5BMzk5MmYwNWMtODk2Yy00MGEwLTgwNDUtZmNlMjcxYjg4NDJlXkEyXkFqcGdeQXVyMTE4NDEyNDk@._V1_.jpg', category: categories[4], price: 39.95},
     {name: `No Man's Sky`, image: 'https://assets1.ignimgs.com/2019/08/14/no-mans-sky---beyond-version---button-1565744905061.jpg', category: categories[4], price: 59.95},
     /*-- Accessories --*/
     {name: 'Playstation 5 DualSense Wireless Controller', image: 'https://m.media-amazon.com/images/I/61uQKdWCfAL._AC_UF1000,1000_QL80_.jpg', category: categories[5], price: 54.95},
