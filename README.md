@@ -97,3 +97,191 @@ const Item = require('../models/item');
 
 })();
 ```
+
+<h2>Model Schemas</h2>
+
+<h3>Category.js</h3>
+
+```
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const categorySchema = new Schema({
+  name: { type: String, required: true },
+  sortOrder: Number
+}, {
+  timestamps: true
+});
+
+module.exports = mongoose.model('Category', categorySchema);
+```
+
+<h3>Item.js</h3>
+
+```
+const mongoose = require('mongoose');
+require('./category');
+
+const itemSchema = require('./itemSchema');
+
+module.exports = mongoose.model('Item', itemSchema);
+```
+
+<h3>ItemSchema.js</h3>
+
+```
+const item = require('./item');
+
+const Schema = require('mongoose').Schema;
+
+const itemSchema = new Schema({
+  name: { type: String },
+  image: { type: String },
+  category: { type: Schema.Types.ObjectId, ref: 'Category' },
+  price: { type: Number, required: true, default: 0 }
+}, {
+  timestamps: true
+});
+
+module.exports = itemSchema;
+```
+
+<h3>Order.js</h3>
+
+```
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const itemSchema = require('./itemSchema');
+
+const lineItemSchema = new Schema({
+  qty: { type: Number, default: 1 },
+  item: itemSchema
+}, {
+  timestamps: true,
+  toJSON: { virtuals: true }
+});
+
+lineItemSchema.virtual('extPrice').get(function() {
+  // 'this' is bound to the lineItem subdoc
+  return this.qty * this.item.price;
+});
+
+const orderSchema = new Schema({
+  user: { type: Schema.Types.ObjectId, ref: 'User' },
+  lineItems: [lineItemSchema],
+  isPaid: { type: Boolean, default: false }
+}, {
+  timestamps: true,
+  toJSON: { virtuals: true }
+});
+
+orderSchema.virtual('orderTotal').get(function() {
+  return this.lineItems.reduce((total, item) => total + item.extPrice, 0);
+});
+
+orderSchema.virtual('totalQty').get(function() {
+  return this.lineItems.reduce((total, item) => total + item.qty, 0);
+});
+
+orderSchema.virtual('orderId').get(function() {
+  return this.id.slice(-6).toUpperCase();
+});
+
+orderSchema.statics.getCart = function(userId) {
+  // 'this' is the Order model
+  return this.findOneAndUpdate(
+    // query
+    { user: userId, isPaid: false },
+    // update
+    { user: userId },
+    // upsert option will create the doc if
+    // it doesn't exist
+    { upsert: true, new: true }
+  );
+};
+
+orderSchema.methods.addItemToCart = async function(itemId) {
+  const cart = this;
+  // Check if item already in cart
+  const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
+  if (lineItem) {
+    lineItem.qty += 1;
+  } else {
+    const item = await mongoose.model('Item').findById(itemId);
+    cart.lineItems.push({ item });
+  }
+  return cart.save();
+};
+
+// Instance method to set an item's qty in the cart (will add item if does not exist)
+orderSchema.methods.setItemQty = function(itemId, newQty) {
+  // this keyword is bound to the cart (order doc)
+  const cart = this;
+  // Find the line item in the cart for the menu item
+  const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
+  if (lineItem && newQty <= 0) {
+    // Calling remove, removes itself from the cart.lineItems array
+    lineItem.deleteOne();
+  } else if (lineItem) {
+    // Set the new qty - positive value is assured thanks to prev if
+    lineItem.qty = newQty;
+  }
+  // return the save() method's promise
+  return cart.save();
+};
+
+module.exports = mongoose.model('Order', orderSchema);
+```
+
+<h3>User.js</h3>
+
+```
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const Schema = mongoose.Schema;
+
+const SALT_ROUNDS = 6;
+
+const userSchema = new Schema({
+  name: { type: String, required: true },
+  email: {
+    type: String,
+    unique: true,
+    trim: true,
+    lowercase: true,
+    required: true
+  },
+  password: {
+    type: String,
+    trim: true,
+    minlength: 3,
+    required: true
+  }
+}, {
+  timestamps: true,
+  toJSON: {
+    transform: function(doc, ret) {
+      delete ret.password;
+      return ret;
+    }
+  }
+});
+
+userSchema.pre('save', async function(next) {
+  // 'this' is the use document
+  if (!this.isModified('password')) return next();
+  // update the password with the computed hash
+  this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
+  return next();
+});
+
+module.exports = mongoose.model('User', userSchema);
+```
+
+<h2>Installing the Program</h2>
+<ol>
+    <li>Go into a directory of choice in with your machines terminal.</li>
+    <li>Clone the code using SSH with the command "git clone"</li>
+    <li>Make sure to go into the cloned directory and run npm i to install all necessary packages</li>
+    <li>Add a .env file with your MONGO_URI and your SECRET hash so the users will be able to log in and out. Use the SHA-256 website to create a hash.</li>
+</ol>
