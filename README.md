@@ -96,4 +96,3 @@ const Item = require('../models/item');
   process.exit();
 
 })();
-```
