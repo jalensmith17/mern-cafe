@@ -4,11 +4,12 @@
     align-items: center;
     padding: 3vmin;
     font-size: 2vmin;
-    color: var(--text-light);
+    color: whitesmoke;
   }
   
   .OrderDetail .sectionHeading {
-    width: 100%
+    width: 100%;
+    text-align: center;
   }
   
   .OrderDetail .lineItemContainer {
@@ -43,5 +44,5 @@
   .OrderDetail .setup {
     position: absolute;
     top: 50vh;
-    font-size: 5vmin;
+    font-size: 3vmin;
   }
