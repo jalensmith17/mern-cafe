@@ -1286,14 +1286,14 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.eBz5FvD9TgyIgfFi1MdG {
   background-color: ghostwhite;
-  border: 0.7vmin solid var(--red);
-  border: 0.7vmin solid var(--red);
+  border: 0.5vmin solid var(--red);
+  border: 0.5vmin solid var(--red);
   border-radius: 1vmin;
   margin: 3vmin 0;
   padding: 3vmin;
   overflow-y: scroll;
   max-height: 90vh;
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuList/MenuList.module.scss"],"names":[],"mappings":"AAAA;EACI,4BAAA;EACA,gCAAA;EACA,gCAAA;EACA,oBAAA;EACA,eAAA;EACA,cAAA;EACA,kBAAA;EACA,gBAAA;AACJ","sourcesContent":[".MenuList {\n    background-color: ghostwhite;\n    border: .7vmin solid var(--red);\n    border: .7vmin solid var(--red);\n    border-radius: 1vmin;\n    margin: 3vmin 0;\n    padding: 3vmin;\n    overflow-y: scroll;\n    max-height: 90vh;\n    }"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuList/MenuList.module.scss"],"names":[],"mappings":"AAAA;EACI,4BAAA;EACA,gCAAA;EACA,gCAAA;EACA,oBAAA;EACA,eAAA;EACA,cAAA;EACA,kBAAA;EACA,gBAAA;AACJ","sourcesContent":[".MenuList {\n    background-color: ghostwhite;\n    border: .5vmin solid var(--red);\n    border: .5vmin solid var(--red);\n    border-radius: 1vmin;\n    margin: 3vmin 0;\n    padding: 3vmin;\n    overflow-y: scroll;\n    max-height: 90vh;\n    }"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"MenuList": `eBz5FvD9TgyIgfFi1MdG`
@@ -1632,7 +1632,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.RygkJgZmBHTETlLP3C3i {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--white);
+  background: linear-gradient(-45deg, #ffffff, #d8d8d8);
   border-radius: 2vmin;
 }
 
@@ -1651,7 +1651,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.RygkJgZmBHTETlLP3C3i {
   align-items: center;
   height: 40%;
   color: var(--red);
-}`, "",{"version":3,"sources":["webpack://./src/pages/AuthPage/AuthPage.module.scss"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,8BAAA;EACA,oBAAA;AACJ;;AAEE;EACE,iBAAA;EACA,kBAAA;EACA,iBAAA;EACA,gBAAA;EACA,eAAA;AACJ;;AAEE;EACE,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;AACJ","sourcesContent":[".AuthPage {\n    margin-top: 12%;\n    padding-top: 5vmin;\n    margin-right: 25vmin;\n    margin-left: 25vmin;\n    height: 100%;\n    display: flex;\n    justify-content: space-evenly;\n    align-items: center;\n    background-color: var(--white);\n    border-radius: 2vmin;\n  }\n  \n  .AuthPage h3 {\n    margin-top: 4vmin;\n    text-align: center;\n    color: var(--red);\n    font-size: 3vmin;\n    cursor: pointer;\n  }\n\n  .AuthPage form {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-evenly;\n    align-items: center;\n    height: 40%;\n    color: var(--red);\n  }"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/AuthPage/AuthPage.module.scss"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,qDAAA;EACA,oBAAA;AACJ;;AAEE;EACE,iBAAA;EACA,kBAAA;EACA,iBAAA;EACA,gBAAA;EACA,eAAA;AACJ;;AAEE;EACE,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,iBAAA;AACJ","sourcesContent":[".AuthPage {\n    margin-top: 12%;\n    padding-top: 5vmin;\n    margin-right: 25vmin;\n    margin-left: 25vmin;\n    height: 100%;\n    display: flex;\n    justify-content: space-evenly;\n    align-items: center;\n    background: linear-gradient(-45deg, #ffffff, #d8d8d8);\n    border-radius: 2vmin;\n  }\n  \n  .AuthPage h3 {\n    margin-top: 4vmin;\n    text-align: center;\n    color: var(--red);\n    font-size: 3vmin;\n    cursor: pointer;\n  }\n\n  .AuthPage form {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-evenly;\n    align-items: center;\n    height: 40%;\n    color: var(--red);\n  }"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"AuthPage": `RygkJgZmBHTETlLP3C3i`
